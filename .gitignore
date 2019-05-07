@@ -1,3 +1,2 @@
-# ignore specifc files
-
-# ignore folders and directories
+*.rar
+*.zip
