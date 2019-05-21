@@ -14,13 +14,13 @@
     padding: 2rem;
 }
 
-.level-1 {
-    /* background-image: url('../images/balao-de-fala-side01@3x.png'); */
-    /* background-repeat: no-repeat;
+/* .level-1 {
+    background-image: url('../images/balao-de-fala-side01@3x.png');
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; */
-}
+    background-attachment: fixed;
+} */
 
 .choice-container {
     display: flex;
@@ -83,4 +83,17 @@ p.choice-prefix {
 .hud-main-text {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+}
+
+#progressBar {
+    width: 20rem;
+    height: 4rem;
+    border: 0.3rem solid #56a5eb;
+    margin-top: 1.5rem;
+}
+
+#progressBarFull {
+    height: 3.4rem;
+    background-color:  #56a5eb;
+    width: 0%;
 }

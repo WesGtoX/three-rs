@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Three R's – Parabéns</title>
+    
+    <!-- Style css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/game.css">
+</head>
+<body>
+    <div id="board-game">
+        <div class="container">
+            <!-- <img src="static/images/cute-robot-menu.png" alt="Cute Robot" class="cute-robot"> -->
+            <div id="end" class="flex-center flex-column">
+                <h1 id="finalScore">0</h1>
+                <form action="">
+                    <input type="text" name="username" id="username" placeholder="User" />
+                    <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>Save</button>
+                </form>
+                <button class="btn" href="/game.html">Play Again</button>
+                <button class="btn" href="/">Go Home</button>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/end.js"></script>
+</body>
+</html>
