@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Three R's</title>
+    <title>Three R's – High Scores</title>
     
+    <!-- Style css -->
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/highscore.css">
 </head>
 <body>
+    <div id="board-highscore">
+        <div class="container">
+            <div id="highScores" class="flex-center flex-column">
+                <h1 id="finalScore">High Scores</h1>
+                <ul id="highScoresList"></ul>
+
+                <a href="/" class="btn">Go Home</a>
+            </div>
+        </div>
+    </div>
     
+    <script src="/static/js/highscores.js"></script>
 </body>
 </html>

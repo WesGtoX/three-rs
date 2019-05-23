@@ -130,12 +130,12 @@ p {
 }
 
 /* ROBOT */
-.cute-robot {
-    width: 450px;
+/* img.cute-robot {
     display: flex;
+    width: 450px;
     padding: 20px 20px 0 20px;
     margin: 50px 100px 0 50px;
-}
+} */
 
 /* BUTTONS */
 .btn {
@@ -190,3 +190,10 @@ input {
 input::placeholder {
     color: #aaa;
 }
+
+/* @media screen and (max-width: 1000px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+} */
