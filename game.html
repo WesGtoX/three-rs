@@ -11,11 +11,24 @@
     <link rel="stylesheet" href="/static/css/game.css">
 </head>
 <body>
-    <div id="board-game">
-        <div id="loader"></div>
+    <div id="board-game"  class="container">
+        <div id="level">
+            <button type="submit" class="btn" id="selectedGameLevel" onclick="selectedGameLevel('level1')">Nível 1</button>
+            <button type="submit" class="btn" id="selectedGameLevel" onclick="selectedGameLevel('level2')">Nível 2</button>
+            <button type="submit" class="btn" id="selectedGameLevel" onclick="selectedGameLevel('level3')">Nível 3</button>
+            <button type="submit" class="btn" id="selectedGameLevel" onclick="selectedGameLevel('level4')">Nível 4</button>
+            <button type="submit" class="btn" id="selectedGameLevel" onclick="selectedGameLevel('level5')">Nível 5</button>
+        </div>
+        <div id="loader" class="hidden"></div>
         <div id="game-hidden" class="container hidden">
-            <!-- <img src="static/images/cute-robot-menu.png" alt="Cute Robot" class="cute-robot"> -->
-            <div id="game" class="level-1 justify-center flex-column">
+            <!-- <div id="history-div" class="justify-center flex-column">
+                
+                <p id="history"></p>
+                <img src="" id="history-img" alt="">
+
+                <button type="submit" class="btn" id="removeGameHidden" onclick="removeGameHidden(event)">Avançar</button>
+            </div> -->
+            <div id="game" class="justify-center flex-column hidden">
                 <div id="hud">
                     <div id="hud-item">
                         <p id="progressText" class="hud-prefix">

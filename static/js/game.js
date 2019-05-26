@@ -5,6 +5,11 @@ const scoreText = document.getElementById('score')
 const progressBarFull = document.getElementById('progressBarFull')
 const loader = document.getElementById('loader')
 const game = document.getElementById('game-hidden')
+const history = document.getElementById('history')
+const historyImg = document.getElementById('history-img')
+const gameQuestion = document.getElementById('game')
+const gameHistory = document.getElementById('history-div')
+const level = document.getElementById('level')
 
 let currentQuestion = {}
 let acceptAnswers = false
@@ -14,47 +19,58 @@ let availableQuestions = []
 
 let questions = []
 
-fetch(
-    "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple" // "questions.json"
-)
-    .then(res => {
-        return res.json()
-    })
-    .then(loadedQuestions => {
-        // console.log(loadedQuestions.results)
-        questions = loadedQuestions.results.map(loadedQuestion => {
-            const formattedQuestion = {
-                question: loadedQuestion.question
-            }
+let lvl = 'level1'
 
-            const answerChoices = [ ... loadedQuestion.incorrect_answers]
-            formattedQuestion.answer = Math.floor(Math.random() * 3) + 1
-            answerChoices.splice(formattedQuestion.answer -1, 0,
-            loadedQuestion.correct_answer)
+gameStart = lvl => {
+    const jsonQuestion = ["database/questions.json"]
 
-            answerChoices.forEach((choice, index) => {
-                formattedQuestion['choice' + (index+1)] = choice
-            })
-
-            return formattedQuestion
+    fetch(
+        jsonQuestion
+        // "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+    )
+        .then(res => {
+            return res.json()
         })
-        // questions = loadedQuestions
-        startGame()
-    })
-    .catch(err => {
-        console.log(err)
-    })
+        .then(loadedQuestions => {
+
+            console.log("LEVEL",loadedQuestions)
+
+            console.log(lvl)
+    
+            questions = loadedQuestions[lvl]['questions']
+            console.log("QUESTIONS", questions)
+        
+            historys = loadedQuestions[lvl]['historys']
+            console.log("HISTORYS", historys)
+        
+            startGame()
+    
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
 
 // CONSTANTES
 const CORRECT_BONUS = 10
-const MAX_QUESTIONS = 3
+const MAX_QUESTIONS = 5
 
 startGame = () => {
     questionCounter = 0
     score = 0
     availableQuestions = [ ... questions];
+    
+    console.log(availableQuestions[0])
+
+    
+    // history.classList.remove('hidden')
+    // history.classList.add('hidden')
+
     getNewQuestion()
+    // history.innerText = historys[0].history
+    // showHistoryImage(historys[0].image)
     game.classList.remove('hidden')
+    gameQuestion.classList.remove('hidden')
     loader.classList.add('hidden')
 }
 
@@ -72,6 +88,9 @@ getNewQuestion = () => {
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionIndex]
+    
+    console.log("QUESTION SELECTED", currentQuestion) //teste
+
     question.innerText = currentQuestion.question
 
     choices.forEach(choice => {
@@ -83,6 +102,21 @@ getNewQuestion = () => {
 
     acceptAnswers = true
 }
+
+removeGameHidden = e => {
+    e.preventDefault();
+    gameQuestion.classList.remove('hidden')
+    gameHistory.classList.add('hidden')
+}
+
+// showHistory = () => {
+//     history = loadedQuestions.level1.historys
+//     console.log(history)
+// }
+
+// showHistoryImage = (image) => {
+//     historyImg.src = "static/images/questions/" + image;
+// }
 
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
@@ -115,4 +149,10 @@ choices.forEach(choice => {
 incrementScore = num => {
     score += num
     scoreText.innerText = score
+}
+
+selectedGameLevel = lvl => {
+    level.classList.add('hidden')
+    // gameHistory.classList.add('hidden')
+    gameStart(lvl)
 }

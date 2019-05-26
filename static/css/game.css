@@ -1,9 +1,12 @@
-#board-game {
+body {
     background-image: url('../images/bg1@3x.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+#board-game {
     width: 100vw;
     height: 100vh;
     display: flex;
