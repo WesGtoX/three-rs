@@ -1,6 +1,6 @@
 <p align="center">
    <a href="https://github.com/WesGtoX/three-rs">
-     <img src="static/logo.png" alt="Three R's" title="Three R's" width="350px">
+     <img src="static/logo.png" alt="Three R's" title="Three R's" width="400px">
    </a>
 </p>
 
