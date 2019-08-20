@@ -16,9 +16,7 @@ Os três R’s, reduzir, reciclar e reutilizar.
 
 ## Project's Goal ##
 
-Será um jogo de perguntas (QUIZ), intuitivas de maneira a ajudar o usuário a entender melhor a importância dos três R’s para o meio ambiente e para uma melhor qualidade de vida para a sociedade.  
-
-No QUIZ terão fases e elas terão continuidade dependendo do desempenho do usuário no jogo, ao longo que ele vai acertando as questões, vai avançando de nível.  
+Jogo de perguntas (QUIZ), intuitivas de maneira a ajudar o usuário a entender melhor a importância dos três R’s para o meio ambiente e para uma melhor qualidade de vida para a sociedade.  
 
 ## Authors ##
 
